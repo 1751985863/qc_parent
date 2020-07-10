@@ -10,7 +10,8 @@ public class BaseExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public Result error(Exception e){
-        return new Result(1,e.getMessage();
+        e.printStackTrace();
+        return new Result(1,e.getMessage());
 
     }
 }
