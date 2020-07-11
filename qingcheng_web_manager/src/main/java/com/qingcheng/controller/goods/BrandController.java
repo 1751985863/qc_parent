@@ -49,7 +49,7 @@ public class BrandController {
         return new Result();
 
     }
-    @PutMapping("/update")
+    @PostMapping("/update")
     public Result update(@RequestBody Brand brand){
         brandService.update(brand);
         return new Result();
