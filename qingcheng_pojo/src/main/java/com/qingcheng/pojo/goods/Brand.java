@@ -1,66 +1,65 @@
 package com.qingcheng.pojo.goods;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
-/*实现可序列化接口，方便在网络上传输*/
+/**
+ * brand实体类
+ * @author Administrator
+ *
+ */
 @Table(name="tb_brand")
-public class Brand implements Serializable {
-    @Id
-    private Integer id;
-    private String name;
-    private String image;
-    private String letter;
-    private Integer sort;
+public class Brand implements Serializable{
 
-    @Override
-    public String toString() {
-        return "Brand{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                ", letter='" + letter + '\'' +
-                ", sort=" + sort +
-                '}';
-    }
+	@Id
+	private Integer id;//品牌id
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	
 
-    public String getName() {
-        return name;
-    }
+	private String name;//品牌名称
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	private String image;//品牌图片地址
 
-    public String getImage() {
-        return image;
-    }
+	private String letter;//品牌的首字母
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+	private Integer seq;//排序
 
-    public String getLetter() {
-        return letter;
-    }
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setLetter(String letter) {
-        this.letter = letter;
-    }
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Integer getSort() {
-        return sort;
-    }
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
+	public String getLetter() {
+		return letter;
+	}
+	public void setLetter(String letter) {
+		this.letter = letter;
+	}
+
+	public Integer getSeq() {
+		return seq;
+	}
+	public void setSeq(Integer seq) {
+		this.seq = seq;
+	}
+
+
+	
 }

@@ -7,34 +7,33 @@ import com.qingcheng.pojo.goods.Brand;
 import com.qingcheng.service.goods.BrandService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
-    /**
-     * 查询所有品牌信息
-     */
+
     @Reference
     private BrandService brandService;
+
     @GetMapping("/findAll")
     public List<Brand> findAll(){
         return brandService.findAll();
+    }
 
-    }
     @GetMapping("/findPage")
-    public PageResult<Brand> findPage(int page,int size){
-       return brandService.findPage(page,size);
+    public PageResult<Brand> findPage(int page, int size){
+        return brandService.findPage(page, size);
     }
+
     @PostMapping("/findList")
-    public List<Brand> findList(@RequestBody Map searchMap){
+    public List<Brand> findList(@RequestBody Map<String,Object> searchMap){
         return brandService.findList(searchMap);
     }
 
     @PostMapping("/findPage")
-    public PageResult<Brand> findPage(@RequestBody Map searchMap,int page,int size){
-        return brandService.findPage(searchMap,page,size);
+    public PageResult<Brand> findPage(@RequestBody Map<String,Object> searchMap,int page, int size){
+        return  brandService.findPage(searchMap,page,size);
     }
 
     @GetMapping("/findById")
@@ -42,24 +41,23 @@ public class BrandController {
         return brandService.findById(id);
     }
 
+
     @PostMapping("/add")
     public Result add(@RequestBody Brand brand){
-
         brandService.add(brand);
         return new Result();
-
     }
+
     @PostMapping("/update")
     public Result update(@RequestBody Brand brand){
         brandService.update(brand);
         return new Result();
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     public Result delete(Integer id){
         brandService.delete(id);
         return new Result();
     }
-
 
 }
